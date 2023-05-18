@@ -1,6 +1,6 @@
 import createDiv from "./createDiv";
 
-const createInvitationPageContent = (parent) => {
+const appendInvitationPageContent = (parent) => {
   const invitationPageContent = createDiv("invitation-page-content");
 
   parent.appendChild(invitationPageContent);
@@ -42,4 +42,4 @@ const createInvitationPageContent = (parent) => {
   invitationPageContent.appendChild(location);
 };
 
-export default createInvitationPageContent;
+export default appendInvitationPageContent;

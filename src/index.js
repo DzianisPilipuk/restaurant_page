@@ -1,7 +1,14 @@
 import createDiv from "./createDiv";
-import createInvitationPageContent from "./home";
+import appendInvitationPageContent from "./home";
+import appendMenuPageContent from "./menu";
 
 const content = document.getElementById("content");
+
+const removeLastChildNode = (parent) => {
+  if (parent.lastChild) {
+    parent.removeChild(parent.lastChild);
+  }
+};
 
 const createHeader = () => {
   const header = createDiv("header");
@@ -17,7 +24,15 @@ const createHeader = () => {
   header.appendChild(headerButtonsWrapper);
 
   const headerButtonHome = createDiv("header-button", "Home");
+  headerButtonHome.addEventListener("click", () => {
+    removeLastChildNode(content);
+    appendInvitationPageContent(content);
+  });
   const headerButtonMenu = createDiv("header-button", "Menu");
+  headerButtonMenu.addEventListener("click", () => {
+    removeLastChildNode(content);
+    appendMenuPageContent(content);
+  });
   const headerButtonContact = createDiv("header-button", "Contact");
 
   headerButtonsWrapper.appendChild(headerButtonHome);
@@ -27,4 +42,4 @@ const createHeader = () => {
 
 createHeader();
 
-createInvitationPageContent(content);
+appendInvitationPageContent(content);
