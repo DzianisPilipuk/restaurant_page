@@ -1,4 +1,5 @@
 import createDiv from "./createDiv";
+import addContactInfo from "./addContactInfo";
 
 const appendFormInput = (parent, type, id, labelText) => {
   const inputWrapper = createDiv("input-wrapper");
@@ -32,6 +33,8 @@ const appendContactPageContent = (parent) => {
   appendFormInput(form, "text", "full_name", "Your name");
   appendFormInput(form, "email", "email", "Your email");
   appendFormInput(form, "textarea", "message", "Message");
+
+  addContactInfo(contactWrapper);
 };
 
 export default appendContactPageContent;

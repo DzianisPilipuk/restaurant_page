@@ -1,4 +1,5 @@
 import createDiv from "./createDiv";
+import addContactInfo from "./addContactInfo";
 
 const appendInvitationPageContent = (parent) => {
   const invitationPageContent = createDiv("invitation-page-content");
@@ -22,24 +23,7 @@ const appendInvitationPageContent = (parent) => {
 
   invitationPageContent.appendChild(placeOrderButton);
 
-  const telephone = createDiv("telephone");
-
-  invitationPageContent.appendChild(telephone);
-
-  const numberWrapper = createDiv("number-wrapper", "555-555-555");
-
-  telephone.appendChild(numberWrapper);
-
-  const workingHours = createDiv(
-    "working-hours",
-    "MON - FRI 7am - 5pm SAT 10am - 3pm"
-  );
-
-  invitationPageContent.appendChild(workingHours);
-
-  const location = createDiv("location", "Półwiejska 11 61-850 Poznań");
-
-  invitationPageContent.appendChild(location);
+  addContactInfo(invitationPageContent);
 };
 
 export default appendInvitationPageContent;
