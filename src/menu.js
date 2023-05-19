@@ -18,11 +18,13 @@ const appendMenuPosition = (parent, name, description) => {
 const menuPositions = [
   {
     name: "Croissants",
-    description: `Flaky and buttery pastries, available in classic, chocolate, and almond flavors.`,
+    description: `Flaky and buttery pastries, available in classic, 
+    chocolate, and almond flavors.`,
   },
   {
     name: "Artisanal Bread",
-    description: `A variety of freshly baked loaves, from rustic sourdough to crusty baguettes.`,
+    description: `A variety of freshly baked loaves, from rustic 
+    sourdough to crusty baguettes.`,
   },
   {
     name: "Tarts",
@@ -31,11 +33,13 @@ const menuPositions = [
   },
   {
     name: "Handcrafted Chocolates",
-    description: `Luxurious handmade chocolates in assorted flavors, perfect for indulgence or gifting.`,
+    description: `Luxurious handmade chocolates in assorted flavors, 
+    perfect for indulgence or gifting.`,
   },
   {
     name: "Cookies",
-    description: `Classic cookies like chocolate chip, oatmeal raisin, and shortbread, baked to perfection.`,
+    description: `Classic cookies like chocolate chip, oatmeal raisin, 
+    and shortbread, baked to perfection.`,
   },
   {
     name: "Croissant Sandwiches",
@@ -49,12 +53,13 @@ const menuPositions = [
   },
   {
     name: "Gluten-Free Options",
-    description: `A selection of gluten-free pastries and bread for those with dietary restrictions.`,
+    description: `A selection of gluten-free pastries and bread for those 
+    with dietary restrictions.`,
   },
 ];
 
 const appendMenuPageContent = (parent) => {
-  const menuWrapper = createDiv("menu wrapper");
+  const menuWrapper = createDiv("menu-wrapper");
   parent.appendChild(menuWrapper);
 
   for (let i = 0; i < menuPositions.length; i += 1) {
