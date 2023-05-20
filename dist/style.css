@@ -9,6 +9,15 @@ body {
   cursor: default;
 }
 
+#content {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(./assets/kirsten-drew-n49BjsFf5dI-unsplash\ .jpg);
+  background-position: center;
+  background-size: cover;
+}
+
 .header {
   height: var(--header-height);
   display: flex;
@@ -41,12 +50,15 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url(./assets/kirsten-drew-n49BjsFf5dI-unsplash\ .jpg);
-  background-position: center;
-  background-size: cover;
+  background-color: #00000000;
+  backdrop-filter: saturate(50%) contrast(20%) brightness(160%);
 }
 
 .we-deliver {
   max-width: 600px;
   text-align: center;
+}
+
+iframe {
+  filter: saturate(50%);
 }
