@@ -11,35 +11,47 @@ const removeLastChildNode = (parent) => {
   }
 };
 
+const loadPageContent = (page) => {
+  removeLastChildNode(content);
+  if (page === "home") appendHomePageContent(content);
+  if (page === "menu") appendMenuPageContent(content);
+  if (page === "contact") appendContactPageContent(content);
+};
+
 const createHeader = () => {
   const header = createDiv("header");
-
   content.appendChild(header);
 
   const logo = createDiv("logo", "Heavenly Bites");
-
   header.appendChild(logo);
 
   const headerButtonsWrapper = createDiv("header-buttons-wrapper");
-
   header.appendChild(headerButtonsWrapper);
 
   const headerButtonHome = createDiv("header-button", "Home");
-  headerButtonHome.addEventListener("click", () => {
-    removeLastChildNode(content);
-    appendHomePageContent(content);
-  });
-
+  headerButtonHome.style.textDecoration = "underline";
   const headerButtonMenu = createDiv("header-button", "Menu");
-  headerButtonMenu.addEventListener("click", () => {
-    removeLastChildNode(content);
-    appendMenuPageContent(content);
+  const headerButtonContact = createDiv("header-button", "Contact");
+
+  headerButtonHome.addEventListener("click", () => {
+    loadPageContent("home");
+    headerButtonHome.style.textDecoration = "underline";
+    headerButtonMenu.style.textDecoration = "none";
+    headerButtonContact.style.textDecoration = "none";
   });
 
-  const headerButtonContact = createDiv("header-button", "Contact");
+  headerButtonMenu.addEventListener("click", () => {
+    loadPageContent("menu");
+    headerButtonHome.style.textDecoration = "none";
+    headerButtonMenu.style.textDecoration = "underline";
+    headerButtonContact.style.textDecoration = "none";
+  });
+
   headerButtonContact.addEventListener("click", () => {
-    removeLastChildNode(content);
-    appendContactPageContent(content);
+    loadPageContent("contact");
+    headerButtonHome.style.textDecoration = "none";
+    headerButtonMenu.style.textDecoration = "none";
+    headerButtonContact.style.textDecoration = "underline";
   });
 
   headerButtonsWrapper.appendChild(headerButtonHome);
