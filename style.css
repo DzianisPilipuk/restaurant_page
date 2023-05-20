@@ -16,7 +16,6 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--base-color);
-  padding: 5px;
 }
 
 .logo {
@@ -42,6 +41,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: url(./assets/kirsten-drew-n49BjsFf5dI-unsplash\ .jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .we-deliver {
