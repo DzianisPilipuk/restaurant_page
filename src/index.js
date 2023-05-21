@@ -22,7 +22,7 @@ const createHeader = () => {
   const header = createDiv("header");
   content.appendChild(header);
 
-  const logo = createDiv("logo", "Heavenly Bites");
+  const logo = createDiv("logo", "HEAVENLY BITES");
   header.appendChild(logo);
 
   const headerButtonsWrapper = createDiv("header-buttons-wrapper");
