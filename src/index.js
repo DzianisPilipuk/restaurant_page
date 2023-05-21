@@ -5,10 +5,38 @@ import appendContactPageContent from "./contact";
 
 const content = document.getElementById("content");
 
+const varContentWrapper = createDiv("var-content-wrapper");
+
 const removeLastChildNode = (parent) => {
   if (parent.lastChild) {
     parent.removeChild(parent.lastChild);
   }
+};
+
+const loadPageContent = (page) => {
+  removeLastChildNode(varContentWrapper);
+  if (page === "home") {
+    appendHomePageContent(varContentWrapper);
+  }
+  if (page === "menu") {
+    appendMenuPageContent(varContentWrapper);
+  }
+  if (page === "contact") {
+    appendContactPageContent(varContentWrapper);
+  }
+  const homeToMenuButton = document.getElementById("homeToMenuButton");
+  if (homeToMenuButton) {
+    homeToMenuButton.addEventListener("click", () => {
+      loadPageContent("menu");
+    });
+  }
+};
+
+const markCurrentPage = (allButtons, buttonToMark) => {
+  for (let i = 0; i < allButtons.length; i += 1) {
+    allButtons[i].style.textDecoration = "none";
+  }
+  buttonToMark.style.textDecoration = "underline";
 };
 
 const createHeader = () => {
@@ -26,44 +54,21 @@ const createHeader = () => {
   const headerButtonMenu = createDiv("header-button", "Menu");
   const headerButtonContact = createDiv("header-button", "Contact");
 
-  const loadPageContent = (page) => {
-    removeLastChildNode(content);
-    if (page === "home") {
-      appendHomePageContent(content);
-      headerButtonHome.style.textDecoration = "underline";
-      headerButtonMenu.style.textDecoration = "none";
-      headerButtonContact.style.textDecoration = "none";
-    }
-    if (page === "menu") {
-      appendMenuPageContent(content);
-      headerButtonHome.style.textDecoration = "none";
-      headerButtonMenu.style.textDecoration = "underline";
-      headerButtonContact.style.textDecoration = "none";
-    }
-    if (page === "contact") {
-      appendContactPageContent(content);
-      headerButtonHome.style.textDecoration = "none";
-      headerButtonMenu.style.textDecoration = "none";
-      headerButtonContact.style.textDecoration = "underline";
-    }
-    const exploreOurMenuButton = document.querySelector("button");
-    if (exploreOurMenuButton) {
-      exploreOurMenuButton.addEventListener("click", () => {
-        loadPageContent("menu");
-      });
-    }
-  };
+  const allButtons = [headerButtonHome, headerButtonMenu, headerButtonContact];
 
   headerButtonHome.addEventListener("click", () => {
     loadPageContent("home");
+    markCurrentPage(allButtons, headerButtonHome);
   });
 
   headerButtonMenu.addEventListener("click", () => {
     loadPageContent("menu");
+    markCurrentPage(allButtons, headerButtonMenu);
   });
 
   headerButtonContact.addEventListener("click", () => {
     loadPageContent("contact");
+    markCurrentPage(allButtons, headerButtonContact);
   });
 
   headerButtonsWrapper.appendChild(headerButtonHome);
@@ -73,4 +78,5 @@ const createHeader = () => {
 
 createHeader();
 
-appendHomePageContent(content);
+content.appendChild(varContentWrapper);
+loadPageContent("home");

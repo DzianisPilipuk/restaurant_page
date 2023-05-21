@@ -18,9 +18,10 @@ const appendInvitationPageContent = (parent) => {
     elevated flavors and unparalleled elegance in every bite.`;
   weDeliver.appendChild(weDeliverContent);
 
-  const placeOrderButton = document.createElement("button");
-  placeOrderButton.textContent = "explore our menu";
-  invitationPageContent.appendChild(placeOrderButton);
+  const homeToMenuButton = document.createElement("button");
+  homeToMenuButton.textContent = "explore our menu";
+  homeToMenuButton.id = "homeToMenuButton";
+  invitationPageContent.appendChild(homeToMenuButton);
 
   addContactInfo(invitationPageContent);
 
