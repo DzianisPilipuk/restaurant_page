@@ -58,16 +58,24 @@ const menuPositions = [
   },
 ];
 
+const appendDividingLine = (parent) => {
+  const dividingline = createDiv("dividing-line");
+  parent.appendChild(dividingline);
+};
+
 const appendMenuPageContent = (parent) => {
   const menuWrapper = createDiv("menu-wrapper");
   parent.appendChild(menuWrapper);
+  let isFirstPosition = true;
 
   for (let i = 0; i < menuPositions.length; i += 1) {
+    if (!isFirstPosition) appendDividingLine(menuWrapper);
     appendMenuPosition(
       menuWrapper,
       menuPositions[i].name,
       menuPositions[i].description
     );
+    isFirstPosition = false;
   }
 };
 

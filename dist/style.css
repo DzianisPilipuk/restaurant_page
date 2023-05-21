@@ -2,6 +2,7 @@
   --base-color: #849785;
   --accent-color: #ffc355;
   --header-height: 90px;
+  --backdrop-filter: saturate(50%) contrast(20%) brightness(160%);
 }
 
 body {
@@ -12,7 +13,6 @@ body {
 }
 
 #content {
-  /* position: fixed; */
   min-height: 100vh;
   width: 100vw;
   background-image: url(./assets/pexels-pixabay-2135.jpg);
@@ -49,6 +49,10 @@ body {
   color: var(--accent-color);
 }
 
+.var-content-wrapper {
+  backdrop-filter: var(--backdrop-filter);
+}
+
 .invitation-page-content {
   min-height: calc(100vh - var(--header-height));
   display: flex;
@@ -56,7 +60,6 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #00000000;
-  backdrop-filter: saturate(50%) contrast(20%) brightness(160%);
 }
 
 .entrance-image {
@@ -111,4 +114,35 @@ iframe {
   -webkit-box-shadow: 0px 4px 28px 1px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px 4px 28px 1px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 4px 28px 1px rgba(0, 0, 0, 0.25);
+}
+
+.menu-wrapper {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-position-wrapper {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-position-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.menu-position-description {
+  text-align: center;
+}
+
+.dividing-line {
+  height: 2px;
+  width: 400px;
+  background-color: var(--base-color);
 }
