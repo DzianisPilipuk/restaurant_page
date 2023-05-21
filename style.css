@@ -1,12 +1,13 @@
 :root {
-  --base-color: #c0c0c0;
-  --accent-color: #ffffff;
-  --header-height: 70px;
+  --base-color: #748376;
+  --accent-color: #ffc355;
+  --header-height: 90px;
 }
 
 body {
   margin: 0px;
   cursor: default;
+  font-family: "Kaisei Opti", serif;
 }
 
 #content {
@@ -28,9 +29,11 @@ body {
 }
 
 .logo {
+  color: var(--accent-color);
   font-size: 2rem;
-  font-weight: 1.3rem;
   margin-bottom: 5px;
+  font-family: "Frank Ruhl Libre", serif;
+  letter-spacing: 0.1rem;
 }
 
 .header-buttons-wrapper {
