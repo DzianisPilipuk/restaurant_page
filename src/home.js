@@ -3,11 +3,12 @@ import addContactInfo from "./addContactInfo";
 
 const appendInvitationPageContent = (parent) => {
   const invitationPageContent = createDiv("invitation-page-content");
-
   parent.appendChild(invitationPageContent);
 
-  const weDeliver = createDiv("we-deliver");
+  const entranceImage = createDiv("entrance-image");
+  invitationPageContent.appendChild(entranceImage);
 
+  const weDeliver = createDiv("we-deliver");
   invitationPageContent.appendChild(weDeliver);
 
   const weDeliverContent = document.createElement("p");
@@ -15,7 +16,6 @@ const appendInvitationPageContent = (parent) => {
     a luxurious experience of handcrafted coffee and exquisite
     pastries delivered right to your doorstep. Discover a world of
     elevated flavors and unparalleled elegance in every bite.`;
-
   weDeliver.appendChild(weDeliverContent);
 
   const placeOrderButton = document.createElement("button");
