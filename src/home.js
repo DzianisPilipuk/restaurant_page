@@ -19,7 +19,7 @@ const appendInvitationPageContent = (parent) => {
   weDeliver.appendChild(weDeliverContent);
 
   const homeToMenuButton = document.createElement("button");
-  homeToMenuButton.textContent = "explore our menu";
+  homeToMenuButton.textContent = "Explore our menu";
   homeToMenuButton.id = "homeToMenuButton";
   invitationPageContent.appendChild(homeToMenuButton);
 

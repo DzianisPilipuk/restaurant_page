@@ -14,7 +14,7 @@ const appendFormInput = (parent, type, id, labelText) => {
     input.setAttribute("type", type);
   }
   input.setAttribute("id", id);
-  input.setAttribute("palceholder", labelText);
+  input.setAttribute("placeholder", labelText);
   inputWrapper.appendChild(input);
 
   const label = document.createElement("label");

@@ -13,6 +13,13 @@ const removeLastChildNode = (parent) => {
   }
 };
 
+const markCurrentPage = (allButtons, buttonToMark) => {
+  for (let i = 0; i < allButtons.length; i += 1) {
+    allButtons[i].style.textDecoration = "none";
+  }
+  buttonToMark.style.textDecoration = "underline";
+};
+
 const loadPageContent = (page) => {
   removeLastChildNode(varContentWrapper);
   if (page === "home") {
@@ -30,13 +37,6 @@ const loadPageContent = (page) => {
       loadPageContent("menu");
     });
   }
-};
-
-const markCurrentPage = (allButtons, buttonToMark) => {
-  for (let i = 0; i < allButtons.length; i += 1) {
-    allButtons[i].style.textDecoration = "none";
-  }
-  buttonToMark.style.textDecoration = "underline";
 };
 
 const createHeader = () => {
