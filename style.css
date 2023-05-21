@@ -1,7 +1,7 @@
 :root {
   --base-color: #849785;
   --accent-color: #ffc355;
-  --grey-color: #7e7e7e;
+  --grey-color: #3b3b3b;
   --header-height: 90px;
   --backdrop-filter: saturate(50%) contrast(20%) brightness(160%);
 }
@@ -84,9 +84,9 @@ body {
 .invitation-page-content button {
   background-color: var(--base-color);
   border-style: none;
-  width: 200px;
+  width: 160px;
   height: 50px;
-  border-radius: 25px;
+  border-radius: 5px;
   font-family: "Frank Ruhl Libre", serif;
   font-size: 1rem;
   -webkit-box-shadow: 0px 4px 28px 1px rgba(0, 0, 0, 0.25);
@@ -142,6 +142,81 @@ iframe {
   height: 2px;
   width: 400px;
   background-color: var(--base-color);
+}
+
+.contact-wrapper {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrapper input,
+.input-wrapper textarea {
+  font-family: "Kaisei Opti", serif;
+  border: 0px;
+  border-bottom: 2px solid;
+  border-radius: 2px;
+  background-color: #ffffff80;
+  padding: 0px 0px 0px 5px;
+  transition: all 0.3s;
+}
+
+.input-wrapper input {
+  width: 300px;
+  height: 40px;
+}
+
+.input-wrapper textarea {
+  height: 100px;
+  padding: 5px 0px 0px 5px;
+  border: 2px solid;
+  resize: none;
+}
+
+.input-wrapper input::placeholder,
+.input-wrapper textarea::placeholder {
+  color: black;
+  font-size: 1rem;
+}
+
+.form input:focus::-webkit-input-placeholder,
+.form textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.form textarea:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--accent-color);
+}
+
+.input-wrapper label {
+  color: var(--grey-color);
+  margin-bottom: 5px;
+  font-size: 1rem;
+  visibility: hidden;
+  transition: all 0.4s;
+  opacity: 0;
+}
+
+.form input:focus + label,
+.form textarea:focus + label {
+  opacity: 1;
+  visibility: visible;
+  /* transform: translateY(1rem); */
 }
 
 /* contact info */
