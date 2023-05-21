@@ -11,13 +11,6 @@ const removeLastChildNode = (parent) => {
   }
 };
 
-const loadPageContent = (page) => {
-  removeLastChildNode(content);
-  if (page === "home") appendHomePageContent(content);
-  if (page === "menu") appendMenuPageContent(content);
-  if (page === "contact") appendContactPageContent(content);
-};
-
 const createHeader = () => {
   const header = createDiv("header");
   content.appendChild(header);
@@ -33,25 +26,44 @@ const createHeader = () => {
   const headerButtonMenu = createDiv("header-button", "Menu");
   const headerButtonContact = createDiv("header-button", "Contact");
 
+  const loadPageContent = (page) => {
+    removeLastChildNode(content);
+    if (page === "home") {
+      appendHomePageContent(content);
+      headerButtonHome.style.textDecoration = "underline";
+      headerButtonMenu.style.textDecoration = "none";
+      headerButtonContact.style.textDecoration = "none";
+    }
+    if (page === "menu") {
+      appendMenuPageContent(content);
+      headerButtonHome.style.textDecoration = "none";
+      headerButtonMenu.style.textDecoration = "underline";
+      headerButtonContact.style.textDecoration = "none";
+    }
+    if (page === "contact") {
+      appendContactPageContent(content);
+      headerButtonHome.style.textDecoration = "none";
+      headerButtonMenu.style.textDecoration = "none";
+      headerButtonContact.style.textDecoration = "underline";
+    }
+    const exploreOurMenuButton = document.querySelector("button");
+    if (exploreOurMenuButton) {
+      exploreOurMenuButton.addEventListener("click", () => {
+        loadPageContent("menu");
+      });
+    }
+  };
+
   headerButtonHome.addEventListener("click", () => {
     loadPageContent("home");
-    headerButtonHome.style.textDecoration = "underline";
-    headerButtonMenu.style.textDecoration = "none";
-    headerButtonContact.style.textDecoration = "none";
   });
 
   headerButtonMenu.addEventListener("click", () => {
     loadPageContent("menu");
-    headerButtonHome.style.textDecoration = "none";
-    headerButtonMenu.style.textDecoration = "underline";
-    headerButtonContact.style.textDecoration = "none";
   });
 
   headerButtonContact.addEventListener("click", () => {
     loadPageContent("contact");
-    headerButtonHome.style.textDecoration = "none";
-    headerButtonMenu.style.textDecoration = "none";
-    headerButtonContact.style.textDecoration = "underline";
   });
 
   headerButtonsWrapper.appendChild(headerButtonHome);
