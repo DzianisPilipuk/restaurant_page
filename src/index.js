@@ -20,6 +20,13 @@ const markCurrentPage = (allButtons, buttonToMark) => {
   buttonToMark.style.textDecoration = "underline";
 };
 
+// create buttons
+const headerButtonHome = createDiv("header-button", "Home");
+headerButtonHome.style.textDecoration = "underline";
+const headerButtonMenu = createDiv("header-button", "Menu");
+const headerButtonContact = createDiv("header-button", "Contact");
+const allButtons = [headerButtonHome, headerButtonMenu, headerButtonContact];
+
 const loadPageContent = (page) => {
   removeLastChildNode(varContentWrapper);
   if (page === "home") {
@@ -35,6 +42,7 @@ const loadPageContent = (page) => {
   if (homeToMenuButton) {
     homeToMenuButton.addEventListener("click", () => {
       loadPageContent("menu");
+      markCurrentPage(allButtons, headerButtonMenu);
     });
   }
 };
@@ -48,13 +56,6 @@ const createHeader = () => {
 
   const headerButtonsWrapper = createDiv("header-buttons-wrapper");
   header.appendChild(headerButtonsWrapper);
-
-  const headerButtonHome = createDiv("header-button", "Home");
-  headerButtonHome.style.textDecoration = "underline";
-  const headerButtonMenu = createDiv("header-button", "Menu");
-  const headerButtonContact = createDiv("header-button", "Contact");
-
-  const allButtons = [headerButtonHome, headerButtonMenu, headerButtonContact];
 
   headerButtonHome.addEventListener("click", () => {
     loadPageContent("home");
