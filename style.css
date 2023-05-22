@@ -47,6 +47,7 @@ body {
 }
 
 .header-button:hover {
+  transition: all 0.3s;
   color: var(--accent-color);
 }
 
@@ -96,6 +97,7 @@ body {
 }
 
 .invitation-page-content button:hover {
+  transition: all 0.3s;
   color: var(--accent-color);
 }
 
@@ -152,6 +154,13 @@ iframe {
   align-items: center;
 }
 
+.contact-wrapper .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .input-wrapper {
   display: flex;
   flex-direction: column;
@@ -175,6 +184,7 @@ iframe {
 
 .input-wrapper textarea {
   height: 100px;
+  width: 300px;
   padding: 5px 0px 0px 5px;
   border: 2px solid;
   resize: none;
@@ -204,11 +214,13 @@ iframe {
 }
 
 .input-wrapper label {
+  position: relative;
+  top: -1rem;
   color: var(--grey-color);
   margin-bottom: 5px;
   font-size: 1rem;
   visibility: hidden;
-  transition: all 0.4s;
+  transition: all 0.3s;
   opacity: 0;
 }
 
@@ -216,7 +228,26 @@ iframe {
 .form textarea:focus + label {
   opacity: 1;
   visibility: visible;
-  /* transform: translateY(1rem); */
+  transform: translateY(1rem);
+}
+
+.submit-form-button {
+  border: none;
+  font-family: "Kaisei Opti", serif;
+  font-size: 1rem;
+  background-color: var(--base-color);
+  border-radius: 10px;
+  width: 200px;
+  height: 50px;
+  margin-bottom: 15px;
+  -webkit-box-shadow: 0px 4px 28px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 4px 28px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 28px 1px rgba(0, 0, 0, 0.25);
+}
+
+.submit-form-button:hover {
+  color: var(--accent-color);
+  transition: all 0.3s;
 }
 
 /* contact info */
