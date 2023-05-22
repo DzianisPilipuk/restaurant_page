@@ -34,6 +34,12 @@ const appendContactPageContent = (parent) => {
   appendFormInput(form, "email", "email", "Your email");
   appendFormInput(form, "textarea", "message", "Message");
 
+  const button = document.createElement("button");
+  button.className = "submit-form-button";
+  button.setAttribute("type", "submit");
+  button.textContent = "Send us message";
+  form.appendChild(button);
+
   addContactInfo(contactWrapper);
 };
 
